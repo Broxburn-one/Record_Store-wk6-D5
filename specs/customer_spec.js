@@ -29,10 +29,26 @@ describe('customer', function(){
    assert.equal('The Beatles', boughtRecord);
  })
 
-it('should decrement store inventory by 1 when buying', function() {
-  var boughtRecord = customer1.buyRecord(record2);
+  it('should be able to find a record in collection', function() {
 
-})
+    customer1.buyRecord(record3);
+    customer1.buyRecord(record4);
+    customer1.buyRecord(record5);
+
+    var found = customer1.findRecord(record3);
+    assert.equal(1, found);
+
+  })
+
+
+
+
+it('should be able to sell a record if it has it', function() {
+
+ customer1.buyRecord(record3);  // add a record
+  var soldRecord = customer1.sellRecord(record3);
+  assert.equal(1, soldRecord);
+ })
 
 
 
