@@ -1,6 +1,8 @@
 var assert = require('chai').assert;
 var Record = require('../record.js');
 
+// made searches simple, ie just by artist not artist + title or by stock code etc.
+
 describe('record', function(){
   var record1
   beforeEach(function() {
