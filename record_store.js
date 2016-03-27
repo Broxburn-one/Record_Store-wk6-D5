@@ -4,29 +4,16 @@ var recordStore = function(params) {
   this.inventory = [];
   this.balance = 400;  // 
 
-//   this.findRecord = function findRecord(record) { 
-//     return record.name.artist === 'The Beatles';
-// }
-
-//    inventory.find(findRecord); 
-  
-
-  // -- this works
-//   this.addStock = function(stock){
-// // check if stock exists
-//     this.inventory.push(stock);     
-// }
-
  
-this.findStockByArtist = function(artist){
-    var foundStock;
-    for (var idx in this.inventory) {
-      if(this.inventory[idx].record.artist === artist){
-        foundStock =  this.inventory[idx];
+  this.findStockByArtist = function(artist){
+      var foundStock;
+      for (var idx in this.inventory) {
+        if(this.inventory[idx].record.artist === artist){
+          foundStock =  this.inventory[idx];
+        }
       }
-    }
-    return {'stock': foundStock, 'index':idx};
-  } 
+      return {'stock': foundStock, 'index':idx};
+    } 
 
 //-----
 
@@ -51,13 +38,8 @@ this.findStockByArtist = function(artist){
               // add sale to bank balance
               var value = item[key].price * (quantity * -1);
               this.balance += value;
-              console.log(this.balance);
+              // console.log(this.balance);
             }
-
-
-
-
-
             return true;  // kick it out when we get a hit
           }
         }

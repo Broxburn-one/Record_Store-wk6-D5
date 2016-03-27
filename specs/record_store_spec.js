@@ -1,6 +1,7 @@
 var assert = require('chai').assert;
 var recordStore = require('../record_store.js');
 var Record = require('../record.js');
+var Customer = require('../customer.js');
 
 describe('record_store', function(){
   var record_store1
@@ -45,11 +46,6 @@ it('should have a city', function() {
     assert.deepEqual(14, foundStockRecord.stock.quantity);
   });
 
-
-// it('should have inventory', function() {
-//     record_store1.addStock({'record': record1, 'quantity': 12});
-//     assert.equal(1, record_store1.inventory.length);
-//   }); 
 
  it('should find stock by artist', function(){
     record_store1.addStock({'record': record2, 'quantity': 2});
