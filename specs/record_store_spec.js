@@ -81,7 +81,16 @@ it('should have a city', function() {
     var output_test = JSON.stringify(record_store1.listInventory(), null, 2);
     // var output = record_store1.listInventory();
     assert.deepEqual(20, foundStockRecord.stock.quantity);
-    
+
+  })
+
+  it('should adjust cash in bank when item sold', function() {
+        record_store1.addStock({'record': record1, 'quantity': -2});
+
+
+        assert.deepEqual(470, record_store1.balance);
+
+
 
   })
 

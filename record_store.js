@@ -47,6 +47,17 @@ this.findStockByArtist = function(artist){
        //     console.log("Record ", item[key].artist );
             item.quantity += quantity;
             // console.log('updated/added ', item);
+            if(quantity < 0) {
+              // add sale to bank balance
+              var value = item[key].price * (quantity * -1);
+              this.balance += value;
+              console.log(this.balance);
+            }
+
+
+
+
+
             return true;  // kick it out when we get a hit
           }
         }
